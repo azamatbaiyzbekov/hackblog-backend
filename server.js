@@ -51,14 +51,16 @@ app.use('/api/v1/users', routes.users);
 
 app.use('/api/v1/posts', routes.posts);
 
+
 //
-if(process.env.NODE_ENV === 'production') {
-    app.use(express.static('front-end/blog-app/build'))
+if (process.env.NODE_ENV === 'production') {
+    app.use(express.static( 'front-end/blog-app/build'));
 
     app.get('*', (req, res) => {
-        res.sendFile(path.resolve(__dirname, 'front-end', 'blog-app', 'index.html'))
+        res.sendFile(path.join(__dirname, 'front-end', 'blog-app', 'build', 'index.html'))
     })
 }
+
 
 app.listen(PORT, () => {
     console.log(`Server is live on port ${PORT}`)
