@@ -15,9 +15,7 @@ const PORT = process.env.PORT || 4000;
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 
-if(process.env.DB_URL === "production") {
-    app.use(express.static("front-end/blog-app/build"))
-}
+
 
 
 app.use((req, res, next) => {
