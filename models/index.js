@@ -1,5 +1,5 @@
 const mongoose = require('mongoose');
-const DB_URL = process.env.DB_URL || 'mongodb://localhost:27017/blog';
+const DB_URL = process.env.DB_URL || 'mongodb://azamat069:Azausf2010@ds241258.mlab.com:41258/heroku_p9hb3nq8';
 
 mongoose.connect(DB_URL, {
     useNewUrlParser: true,
